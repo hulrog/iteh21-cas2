@@ -46,9 +46,7 @@
             </tr>
             </thead>
             <tbody>
-            <?php
-            while ($red = $result->fetch_array()) {
-                ?>
+            
                 <tr>
                     <td><?php echo $red["predmet"] ?></td>
                     <td><?php echo $red["katedra"] ?></td>
@@ -62,9 +60,7 @@
                     </td>
 
                 </tr>
-                <?php
-            }
-            } ?>
+
             </tbody>
         </table>
         <div class="row" >
