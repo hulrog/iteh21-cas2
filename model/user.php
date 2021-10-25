@@ -28,10 +28,7 @@ class User{
         //MySQL upit 
         //i inace: php dozvoljava koriscenje promenljivih unutar stringa
         //(vazi samo za dvostruke navodnike, jednostruki tumace string bukvalno)
-        $query = 
-        "SELECT * FROM user WHERE username='$usr->username' AND password='$usr->password'";
-        
-        //konekcija sa bazom - kasnije
+        $query = "SELECT * FROM user WHERE username='$usr->username' AND password='$usr->password'";
 
         return $conn->query($query); //ako je ulogovan korisnik da vrati true
         //query($query) ce vratiti true ako $query, tj. SELECT upit, vrati bilo sta

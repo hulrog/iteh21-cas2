@@ -1,4 +1,37 @@
+<?php
+require "dbBroker.php";//kroz njega se kreira konekcija
+//mora prvo dbBroker
+require "model/prijava.php";
 
+session_start();
+
+//ako ne postoji sesija sa tim userid vrati ga na login
+//zabranjuje da neko radi sa klk a da nije ulogovan
+if(!isset($_SESSION['user_id'])){
+    header('Location: index.php');
+    exit();
+}
+
+//da dobijemo sve prijave
+//poziva se staticki (preko ::) metoda iz klase Prijava iz <model>
+//$conn je iz dbBrokera
+
+$rezultat = Prijava::getAll($conn); 
+
+//ako ne postoji rezultat
+if(!$rezultat){
+    echo "Nastala je greska prilikom izvodjenja upita <br>";
+    die();//isto sto i exit();
+}
+
+//ako vrati 0 redova
+if($rezultat->num_rows==0){
+    echo "Nema prijava na kolokvijume";
+    die();
+}//ako vrati 1 ili vise redova onda ih ispisi
+else{ //otvara else - zatvara se dole gde ispisuje red
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,7 +79,16 @@
             </tr>
             </thead>
             <tbody>
+            <!--ovaj red treba da se ponavlja za sve koji postoje -->
+            <?php
+            //$rezultat->fetch_array() vraca u okviru asocijativnog niza
+            //za svaki od redova u bazi
+            //fetchall() bi hvatao kao neki objekat
             
+            //prolazi sve dok rezultat fetch_array() ima naredni red koji moze da fetchuje
+            while($red=$rezultat->fetch_array()):
+
+            ?>
                 <tr>
                     <td><?php echo $red["predmet"] ?></td>
                     <td><?php echo $red["katedra"] ?></td>
@@ -60,6 +102,11 @@
                     </td>
 
                 </tr>
+
+            <?php
+            endwhile;
+            }//zatvara else
+            ?>
 
             </tbody>
         </table>

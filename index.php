@@ -14,8 +14,8 @@
         $uname = $_POST['username'];
         $upass = $_POST['password'];
 
-
-        $korisnik = new User(null, $uname, $upass);
+        //id se stavi da je 1 
+        $korisnik = new User(1, $uname, $upass);
 
         //$odg = $korisnik->logInUser($uname, $upass, $conn);
         $odg = User::logInUser($korisnik, $conn); //poziv nad klasom jer ja klasicna
