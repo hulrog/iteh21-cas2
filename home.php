@@ -127,12 +127,12 @@ else{ //otvara else - zatvara se dole gde ispisuje red
         </div>
     </div>
 </div>
-
+<!-- Modali su ovi prozorcici (iz bootstrapa) -->
 <!-- Modal -->
 <div class="modal fade" id="myModal" role="dialog" >
     <div class="modal-dialog">
 
-        <!--Sadrzaj modala-->
+        <!--Sadrzaj zakazi modala-->
         <div class="modal-content" >
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>

@@ -11,7 +11,7 @@ class Prijava{
                                 $sala=null, $datum=null){
         $this->id = $id;
         $this->predmet = $predmet;
-        $this->katedra = $predmet;
+        $this->katedra = $katedra;
         $this->sala = $sala;
         $this->datum = $datum;
 
