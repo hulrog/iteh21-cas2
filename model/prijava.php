@@ -49,7 +49,7 @@ class Prijava{
     //obrisi sve prijave gde je id trenutni (this) - nije staticka pa cemo ovako
     public function deleteById(mysqli $conn){
 
-        $query = "DELETE FROM prijave WHERE $id=$this->id";
+        $query = "DELETE FROM prijave WHERE id=$this->id";
         return $conn->query($query);//return bezveze da se vidi dal je uspesna
 
     }
