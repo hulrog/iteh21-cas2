@@ -50,7 +50,7 @@ class Prijava{
     public function deleteById(mysqli $conn){
 
         $query = "DELETE FROM prijave WHERE id=$this->id";
-        return $conn->query($query);//return bezveze da se vidi dal je uspesna
+        return $conn->query($query);
 
     }
 
@@ -59,7 +59,7 @@ class Prijava{
         $query = "INSERT INTO prijave(predmet,katedra,sala,datum) 
         VALUES('$prijava->predmet', '$prijava->katedra', '$prijava->sala', '$prijava->datum')";
         
-        return $conn->query($query);//return bezveze da se vidi dal je uspesna
+        return $conn->query($query);
 
     }
 

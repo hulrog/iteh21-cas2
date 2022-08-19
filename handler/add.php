@@ -1,6 +1,7 @@
 <?php
+//ovo je handler - po MVC - Model View Controller paternu onje Controller
 
-//izadji iz handler foldera i idi dovedi dbBroker
+//izadji iz handler foldera i idi dovedi dbBroker i model/prijava.php
 require "../dbBroker.php";
 require "../model/prijava.php";
 
@@ -8,8 +9,7 @@ require "../model/prijava.php";
 if(isset($_POST['predmet']) && isset($_POST['katedra']) && 
 isset($_POST['sala']) && isset($_POST['datum'])){
     //za id null jer radi autoincrement
-    $prijava = new Prijava(null, $_POST['predmet'], $_POST['katedra'], 
-    $_POST['sala'], $_POST['datum']);   
+    $prijava = new Prijava(null, $_POST['predmet'], $_POST['katedra'], $_POST['sala'], $_POST['datum']);   
     $status = Prijava::add($prijava, $conn); //$conn vec postoji u dbBrokeru
 
     if($status){
