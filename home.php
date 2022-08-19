@@ -163,7 +163,7 @@ else{ //otvara else - zatvara se dole gde ispisuje red
                                 </div>
                                 <div class="form-group">
                                     <button id="btnDodaj" type="submit" class="btn btn-success btn-block"
-                                    tyle="background-color: orange; border: 1px solid black;">Zakazi</button>
+                                    style="background-color: orange; border: 1px solid black;">Zakazi</button>
                                 </div>
                             </div>
                     </div>
